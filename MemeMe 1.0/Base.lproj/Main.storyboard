@@ -24,7 +24,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gnz-1I-nqa">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Item" id="Nyb-If-9q6"/>
+                                    <barButtonItem title="Album" id="Nyb-If-9q6">
+                                        <connections>
+                                            <action selector="pickAlbumImage:" destination="BYZ-38-t0r" id="9eV-yI-R5a"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Jh-ha-9g0">
@@ -63,6 +67,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="memeImage" destination="Rig-nP-hG8" id="dtj-6G-h4G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
