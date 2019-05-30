@@ -25,7 +25,11 @@
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="x2W-pz-Vta"/>
-                                    <barButtonItem systemItem="camera" id="9He-Ce-vJx"/>
+                                    <barButtonItem systemItem="camera" id="9He-Ce-vJx">
+                                        <connections>
+                                            <action selector="pickCameraImage:" destination="BYZ-38-t0r" id="xbe-Gl-gbo"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Pi8-kV-u6S"/>
                                     <barButtonItem title="Album" id="Nyb-If-9q6">
                                         <connections>
@@ -72,6 +76,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="9He-Ce-vJx" id="Q57-ad-xKU"/>
                         <outlet property="memeImage" destination="Rig-nP-hG8" id="dtj-6G-h4G"/>
                     </connections>
                 </viewController>

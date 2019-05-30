@@ -10,7 +10,12 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    // MARK: Outlets
+
     @IBOutlet var memeImage: UIImageView!
+    @IBOutlet var cameraButton: UIBarButtonItem!
+
+    // MARK: App lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +23,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         memeImage.contentMode = .scaleToFill
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+    }
+
+    // MARK: Custom methods
+
     @IBAction func pickAlbumImage(_ sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+
+    @IBAction func pickCameraImage(_ sender: UIBarButtonItem) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
     }
 
