@@ -8,6 +8,17 @@
 
 import UIKit
 
+struct Constants {
+
+    struct TextField {
+        static let topText = "TOP"
+        static let bottomText = "BOTTOM"
+        static let font = "HelveticaNeue-CondensedBlack"
+        static let size = 30
+    }
+
+}
+
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // TODO: Set impact font, all caps, white with black outline by using defaultTextAttributes
     // TODO: When user click inside text field - initial text disappears - textFieldDidBeginEditing
@@ -36,14 +47,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     func initTextFields() {
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
+        topTextField.text = Constants.TextField.topText
+        bottomTextField.text = Constants.TextField.bottomText
 
         topTextField.textAlignment = .center
         bottomTextField.textAlignment = .center
 
-        topTextField.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)
-        bottomTextField.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)
+        topTextField.font = UIFont(name: Constants.TextField.font, size: CGFloat(Constants.TextField.size))
+        bottomTextField.font = UIFont(name: Constants.TextField.font, size: CGFloat(Constants.TextField.size))
     }
 
     // MARK: Custom methods
