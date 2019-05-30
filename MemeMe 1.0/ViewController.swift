@@ -8,17 +8,6 @@
 
 import UIKit
 
-struct Constants {
-
-    struct TextField {
-        static let topText = "TOP"
-        static let bottomText = "BOTTOM"
-        static let font = "HelveticaNeue-CondensedBlack"
-        static let size = 30
-    }
-
-}
-
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // TODO: Set impact font, all caps, white with black outline by using defaultTextAttributes
     // TODO: When user click inside text field - initial text disappears - textFieldDidBeginEditing
