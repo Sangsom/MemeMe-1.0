@@ -20,7 +20,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        memeImage.contentMode = .scaleToFill
+        memeImage.contentMode = .scaleAspectFill
     }
 
     override func viewWillAppear(_ animated: Bool) {
