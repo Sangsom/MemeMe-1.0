@@ -45,16 +45,14 @@
                                     <navigationItem title="Title" id="jUJ-x3-71B"/>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kes-th-C30">
-                                <rect key="frame" x="159" y="129" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kes-th-C30" userLabel="Top Text Field">
+                                <rect key="frame" x="194.5" y="138" width="25" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ef-rp-Xpr">
-                                <rect key="frame" x="159" y="744" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ef-rp-Xpr" userLabel="Bottom Text Field">
+                                <rect key="frame" x="194.5" y="733" width="25" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -62,22 +60,28 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Gnz-1I-nqa" firstAttribute="top" secondItem="2Ef-rp-Xpr" secondAttribute="bottom" constant="50" id="0JQ-Fh-O18"/>
                             <constraint firstItem="Gnz-1I-nqa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8SX-CK-E5J"/>
                             <constraint firstItem="Rig-nP-hG8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Dps-nK-SyF"/>
+                            <constraint firstItem="2Ef-rp-Xpr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GVz-Ss-DqG"/>
                             <constraint firstItem="Rig-nP-hG8" firstAttribute="top" secondItem="2Jh-ha-9g0" secondAttribute="bottom" id="Gy2-fh-BEM"/>
                             <constraint firstItem="Rig-nP-hG8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HPd-gU-Tyt"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Gnz-1I-nqa" secondAttribute="bottom" id="MDV-tR-pC9"/>
                             <constraint firstItem="2Jh-ha-9g0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SSW-Bw-n23"/>
                             <constraint firstItem="Gnz-1I-nqa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YJP-R8-mfc"/>
                             <constraint firstItem="Gnz-1I-nqa" firstAttribute="top" secondItem="Rig-nP-hG8" secondAttribute="bottom" id="bed-HW-2hp"/>
+                            <constraint firstItem="kes-th-C30" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k3v-oH-8er"/>
                             <constraint firstItem="2Jh-ha-9g0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kSN-Lv-wmx"/>
+                            <constraint firstItem="kes-th-C30" firstAttribute="top" secondItem="2Jh-ha-9g0" secondAttribute="bottom" constant="50" id="lvP-oi-ydk"/>
                             <constraint firstItem="2Jh-ha-9g0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uHD-59-PLx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="2Ef-rp-Xpr" id="U3d-aq-tIT"/>
                         <outlet property="cameraButton" destination="9He-Ce-vJx" id="Q57-ad-xKU"/>
                         <outlet property="memeImage" destination="Rig-nP-hG8" id="dtj-6G-h4G"/>
+                        <outlet property="topTextField" destination="kes-th-C30" id="WgK-xj-Axu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
