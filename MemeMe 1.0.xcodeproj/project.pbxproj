@@ -13,6 +13,8 @@
 		1BA9884F229FC3EA00652CD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BA9884E229FC3EA00652CD8 /* Assets.xcassets */; };
 		1BA98852229FC3EA00652CD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA98850229FC3EA00652CD8 /* LaunchScreen.storyboard */; };
 		1BA9885B22A0143D00652CD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9885A22A0143D00652CD8 /* Constants.swift */; };
+		1BA9885E22A1169B00652CD8 /* ClearTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9885D22A1169B00652CD8 /* ClearTextFieldDelegate.swift */; };
+		1BA9886022A117C400652CD8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1BA9885F22A117C400652CD8 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		1BA98851229FC3EA00652CD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BA98853229FC3EA00652CD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BA9885A22A0143D00652CD8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1BA9885D22A1169B00652CD8 /* ClearTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearTextFieldDelegate.swift; sourceTree = "<group>"; };
+		1BA9885F22A117C400652CD8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		1BA98846229FC3E900652CD8 /* MemeMe 1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				1BA9885C22A1159300652CD8 /* TextFieldDelegates */,
 				1BA98847229FC3E900652CD8 /* AppDelegate.swift */,
 				1BA98849229FC3E900652CD8 /* ViewController.swift */,
 				1BA9884B229FC3E900652CD8 /* Main.storyboard */,
@@ -63,8 +68,17 @@
 				1BA98850229FC3EA00652CD8 /* LaunchScreen.storyboard */,
 				1BA98853229FC3EA00652CD8 /* Info.plist */,
 				1BA9885A22A0143D00652CD8 /* Constants.swift */,
+				1BA9885F22A117C400652CD8 /* .swiftlint.yml */,
 			);
 			path = "MemeMe 1.0";
+			sourceTree = "<group>";
+		};
+		1BA9885C22A1159300652CD8 /* TextFieldDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				1BA9885D22A1169B00652CD8 /* ClearTextFieldDelegate.swift */,
+			);
+			path = TextFieldDelegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BA9886022A117C400652CD8 /* .swiftlint.yml in Resources */,
 				1BA98852229FC3EA00652CD8 /* LaunchScreen.storyboard in Resources */,
 				1BA9884F229FC3EA00652CD8 /* Assets.xcassets in Resources */,
 				1BA9884D229FC3E900652CD8 /* Main.storyboard in Resources */,
@@ -161,6 +176,7 @@
 			files = (
 				1BA9884A229FC3E900652CD8 /* ViewController.swift in Sources */,
 				1BA98848229FC3E900652CD8 /* AppDelegate.swift in Sources */,
+				1BA9885E22A1169B00652CD8 /* ClearTextFieldDelegate.swift in Sources */,
 				1BA9885B22A0143D00652CD8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

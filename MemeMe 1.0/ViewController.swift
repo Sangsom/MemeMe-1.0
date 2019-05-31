@@ -19,6 +19,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var topTextField: UITextField!
     @IBOutlet var bottomTextField: UITextField!
 
+    // MARK: Delegate objects
+    let clearTextFieldDelegate = ClearTextFieldDelegate()
+
     // MARK: App lifecycle
 
     override func viewDidLoad() {
@@ -35,6 +38,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     func initTextFields() {
+        topTextField.delegate = clearTextFieldDelegate
+        bottomTextField.delegate = clearTextFieldDelegate
+
         topTextField.text = Constants.TextField.topText
         bottomTextField.text = Constants.TextField.bottomText
 
@@ -77,5 +83,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             memeImage.image = image
         }
         dismiss(animated: true, completion: nil)
+    }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
     }
 }
