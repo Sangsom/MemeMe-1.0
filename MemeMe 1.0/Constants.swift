@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
 
@@ -15,6 +16,9 @@ struct Constants {
         static let bottomText = "BOTTOM"
         static let font = "HelveticaNeue-CondensedBlack"
         static let size = 30
+        static let strokeColor = UIColor.black
+        static let foreGroundColor = UIColor.white
+        static let strokeWidth = 3
     }
 
 }

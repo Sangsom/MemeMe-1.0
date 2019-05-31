@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    // TODO: Set impact font, all caps, white with black outline by using defaultTextAttributes
     // TODO: When user click inside text field - initial text disappears - textFieldDidBeginEditing
     // TODO: By pressing return - keyboard should be dismissed - textFieldShouldReturn
 
@@ -39,11 +38,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField.text = Constants.TextField.topText
         bottomTextField.text = Constants.TextField.bottomText
 
+        topTextField.autocapitalizationType = .allCharacters
+        bottomTextField.autocapitalizationType = .allCharacters
+
+        let textAttributes: [NSAttributedString.Key: Any] = [
+            .strokeColor: Constants.TextField.strokeColor,
+            .foregroundColor: Constants.TextField.foreGroundColor,
+            .font: UIFont(name: Constants.TextField.font, size: CGFloat(Constants.TextField.size))!,
+            .strokeWidth: Constants.TextField.strokeWidth
+        ]
+
+        topTextField.defaultTextAttributes = textAttributes
+        bottomTextField.defaultTextAttributes  = textAttributes
+
         topTextField.textAlignment = .center
         bottomTextField.textAlignment = .center
-
-        topTextField.font = UIFont(name: Constants.TextField.font, size: CGFloat(Constants.TextField.size))
-        bottomTextField.font = UIFont(name: Constants.TextField.font, size: CGFloat(Constants.TextField.size))
     }
 
     // MARK: Custom methods
