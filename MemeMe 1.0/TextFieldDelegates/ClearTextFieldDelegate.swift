@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class ClearTextFieldDelegate: NSObject, UITextFieldDelegate {
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
     }
@@ -18,4 +19,5 @@ class ClearTextFieldDelegate: NSObject, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
 }
