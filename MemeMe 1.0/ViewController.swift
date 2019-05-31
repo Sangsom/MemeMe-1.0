@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    // TODO: When user click inside text field - initial text disappears - textFieldDidBeginEditing
     // TODO: By pressing return - keyboard should be dismissed - textFieldShouldReturn
 
     // MARK: Outlets
