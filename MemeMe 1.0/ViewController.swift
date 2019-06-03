@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
+UITextFieldDelegate {
     // TODO: By pressing return - keyboard should be dismissed - textFieldShouldReturn
     // TODO: Move up view only when pressing on bottom text view
 
@@ -18,10 +19,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var cameraButton: UIBarButtonItem!
     @IBOutlet var topTextField: UITextField!
     @IBOutlet var bottomTextField: UITextField!
-
-    // MARK: Delegate objects
-
-    let clearTextFieldDelegate = ClearTextFieldDelegate()
 
     // MARK: App lifecycle
 
@@ -43,8 +40,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     func initTextFields() {
-        topTextField.delegate = clearTextFieldDelegate
-        bottomTextField.delegate = clearTextFieldDelegate
+        topTextField.delegate = self
+        bottomTextField.delegate = self
 
         topTextField.text = Constants.TextField.topText
         bottomTextField.text = Constants.TextField.bottomText
@@ -88,5 +85,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             memeImage.image = image
         }
         dismiss(animated: true, completion: nil)
+    }
+
+    // MARK: Text field methods
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
