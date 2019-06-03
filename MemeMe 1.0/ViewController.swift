@@ -8,6 +8,13 @@
 
 import UIKit
 
+struct Meme {
+    var topString: String
+    var bottomString: String
+    var originalImage: UIImage
+    var updatedImage: UIImage
+}
+
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
 UITextFieldDelegate {
 
@@ -19,6 +26,7 @@ UITextFieldDelegate {
     @IBOutlet var bottomTextField: UITextField!
     @IBOutlet var navigation: UINavigationItem!
 
+    var memedImage: UIImage?
     // MARK: App lifecycle
 
     override func viewDidLoad() {
@@ -41,6 +49,9 @@ UITextFieldDelegate {
         // Add Cancel button
         navigation.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self,
                                                         action: #selector(cancelTapped))
+        navigation.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self,
+                                                       action: #selector(shareItem))
+        navigation.leftBarButtonItem?.isEnabled = false
         navigation.title = Constants.TextField.appName
         initTextFields()
     }
@@ -91,6 +102,9 @@ UITextFieldDelegate {
             memeImage.image = image
         }
         dismiss(animated: true, completion: nil)
+
+        memedImage = generateImage()
+        navigation.leftBarButtonItem?.isEnabled = true
     }
 
     // MARK: Text field methods
@@ -141,5 +155,24 @@ UITextFieldDelegate {
 
     @objc func cancelTapped() {
         initAppSettings()
+    }
+
+    @objc func shareItem() {
+        print("Sharing")
+    }
+
+    func saveMeme() {
+
+       // let meme = Meme(topString: topTextField.text!, bottomString: bottomTextField.text!,
+                       // originalImage: memeImage.image!, updatedImage: generateImage())
+    }
+
+    func generateImage() -> UIImage {
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        return memedImage
     }
 }
