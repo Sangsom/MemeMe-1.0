@@ -82,7 +82,9 @@
                         <outlet property="cameraButton" destination="9He-Ce-vJx" id="Q57-ad-xKU"/>
                         <outlet property="memeImage" destination="Rig-nP-hG8" id="dtj-6G-h4G"/>
                         <outlet property="navigation" destination="jUJ-x3-71B" id="Ub5-QS-ASS"/>
+                        <outlet property="navigationBar" destination="2Jh-ha-9g0" id="TY0-vv-aM5"/>
                         <outlet property="navigationItem" destination="2Jh-ha-9g0" id="j3u-ra-HHD"/>
+                        <outlet property="toolbar" destination="Gnz-1I-nqa" id="cW5-0e-BDI"/>
                         <outlet property="topTextField" destination="kes-th-C30" id="WgK-xj-Axu"/>
                     </connections>
                 </viewController>

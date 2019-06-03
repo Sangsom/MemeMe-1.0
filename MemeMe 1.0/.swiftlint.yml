@@ -1,3 +1,4 @@
 disabled_rules:
  - weak_delegate
  - force_cast
+ - identifier_name

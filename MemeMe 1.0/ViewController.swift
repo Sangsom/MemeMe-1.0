@@ -25,6 +25,8 @@ UITextFieldDelegate {
     @IBOutlet var topTextField: UITextField!
     @IBOutlet var bottomTextField: UITextField!
     @IBOutlet var navigation: UINavigationItem!
+    @IBOutlet var navigationBar: UINavigationBar!
+    @IBOutlet var toolbar: UIToolbar!
 
     var memedImage: UIImage?
     // MARK: App lifecycle
@@ -100,11 +102,9 @@ UITextFieldDelegate {
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[.originalImage] as? UIImage {
             memeImage.image = image
+            navigation.leftBarButtonItem?.isEnabled = true
         }
         dismiss(animated: true, completion: nil)
-
-        memedImage = generateImage()
-        navigation.leftBarButtonItem?.isEnabled = true
     }
 
     // MARK: Text field methods
@@ -151,28 +151,29 @@ UITextFieldDelegate {
         }
     }
 
-    // MARK: Cancel button
-
     @objc func cancelTapped() {
         initAppSettings()
     }
 
     @objc func shareItem() {
-        print("Sharing")
-    }
-
-    func saveMeme() {
-
-       // let meme = Meme(topString: topTextField.text!, bottomString: bottomTextField.text!,
-                       // originalImage: memeImage.image!, updatedImage: generateImage())
+        memedImage = generateImage()
+        let ac = UIActivityViewController(activityItems: [memedImage!], applicationActivities: nil)
+        present(ac, animated: true)
     }
 
     func generateImage() -> UIImage {
+        navigationBar.isHidden = true
+        toolbar.isHidden = true
+
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
+        navigationBar.isHidden = false
+        toolbar.isHidden = false
+
         return memedImage
     }
+
 }
