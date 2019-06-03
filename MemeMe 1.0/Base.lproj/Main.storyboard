@@ -81,6 +81,8 @@
                         <outlet property="bottomTextField" destination="2Ef-rp-Xpr" id="U3d-aq-tIT"/>
                         <outlet property="cameraButton" destination="9He-Ce-vJx" id="Q57-ad-xKU"/>
                         <outlet property="memeImage" destination="Rig-nP-hG8" id="dtj-6G-h4G"/>
+                        <outlet property="navigation" destination="jUJ-x3-71B" id="Ub5-QS-ASS"/>
+                        <outlet property="navigationItem" destination="2Jh-ha-9g0" id="j3u-ra-HHD"/>
                         <outlet property="topTextField" destination="kes-th-C30" id="WgK-xj-Axu"/>
                     </connections>
                 </viewController>

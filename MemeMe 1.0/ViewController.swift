@@ -17,15 +17,13 @@ UITextFieldDelegate {
     @IBOutlet var cameraButton: UIBarButtonItem!
     @IBOutlet var topTextField: UITextField!
     @IBOutlet var bottomTextField: UITextField!
+    @IBOutlet var navigation: UINavigationItem!
 
     // MARK: App lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        memeImage.contentMode = .scaleAspectFit
-
-        initTextFields()
+        initAppSettings()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +33,16 @@ UITextFieldDelegate {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+    }
+
+    func initAppSettings() {
+        memeImage.image = nil
+        memeImage.contentMode = .scaleAspectFit
+        // Add Cancel button
+        navigation.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self,
+                                                        action: #selector(cancelTapped))
+        navigation.title = Constants.TextField.appName
+        initTextFields()
     }
 
     func initTextFields() {
@@ -129,4 +137,9 @@ UITextFieldDelegate {
         }
     }
 
+    // MARK: Cancel button
+
+    @objc func cancelTapped() {
+        initAppSettings()
+    }
 }

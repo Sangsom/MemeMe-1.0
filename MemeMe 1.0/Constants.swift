@@ -12,13 +12,14 @@ import UIKit
 struct Constants {
 
     struct TextField {
+        static let appName = "MemeMe"
         static let topText = "TOP"
         static let bottomText = "BOTTOM"
         static let font = "HelveticaNeue-CondensedBlack"
-        static let size = 30
+        static let size = 35
         static let strokeColor = UIColor.black
-        static let foreGroundColor = UIColor.white
-        static let strokeWidth = 3
+        static let foreGroundColor = UIColor.green
+        static let strokeWidth = 5
     }
 
 }
