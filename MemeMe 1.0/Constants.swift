@@ -16,10 +16,10 @@ struct Constants {
         static let topText = "TOP"
         static let bottomText = "BOTTOM"
         static let font = "HelveticaNeue-CondensedBlack"
-        static let size = 35
+        static let size = 40
         static let strokeColor = UIColor.black
-        static let foreGroundColor = UIColor.green
-        static let strokeWidth = 5
+        static let foreGroundColor = UIColor.white
+        static let strokeWidth = -2.5
     }
 
 }

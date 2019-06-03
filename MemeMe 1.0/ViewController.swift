@@ -62,6 +62,9 @@ UITextFieldDelegate {
         topTextField.delegate = self
         bottomTextField.delegate = self
 
+        topTextField.borderStyle = .none
+        bottomTextField.borderStyle = .none
+
         topTextField.text = Constants.TextField.topText
         bottomTextField.text = Constants.TextField.bottomText
 
@@ -69,9 +72,9 @@ UITextFieldDelegate {
         bottomTextField.autocapitalizationType = .allCharacters
 
         let textAttributes: [NSAttributedString.Key: Any] = [
-            .strokeColor: Constants.TextField.strokeColor,
-            .foregroundColor: Constants.TextField.foreGroundColor,
             .font: UIFont(name: Constants.TextField.font, size: CGFloat(Constants.TextField.size))!,
+            .foregroundColor: Constants.TextField.foreGroundColor,
+            .strokeColor: Constants.TextField.strokeColor,
             .strokeWidth: Constants.TextField.strokeWidth
         ]
 
