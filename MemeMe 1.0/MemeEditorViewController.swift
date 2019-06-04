@@ -150,6 +150,12 @@ UITextFieldDelegate {
     @objc func shareItem() {
         memedImage = generateImage()
         let ac = UIActivityViewController(activityItems: [memedImage!], applicationActivities: nil)
+        ac.completionWithItemsHandler = {
+            (activityType, completed, returnedItems, activityError) in
+            if completed {
+                self.saveMeme()
+            }
+        }
         present(ac, animated: true)
     }
 
