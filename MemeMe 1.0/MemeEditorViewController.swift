@@ -153,6 +153,15 @@ UITextFieldDelegate {
         present(ac, animated: true)
     }
 
+    func saveMeme() {
+        if memeImage != nil {
+            let meme = Meme(topString: topTextField.text!,
+                            bottomString: bottomTextField.text!,
+                            originalImage: memeImage.image!,
+                            updatedImage: memedImage!)
+        }
+    }
+
     func generateImage() -> UIImage {
         navigationBar.isHidden = true
         toolbar.isHidden = true
