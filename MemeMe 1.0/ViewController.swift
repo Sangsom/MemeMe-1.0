@@ -8,13 +8,6 @@
 
 import UIKit
 
-struct Meme {
-    var topString: String
-    var bottomString: String
-    var originalImage: UIImage
-    var updatedImage: UIImage
-}
-
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
 UITextFieldDelegate {
 
