@@ -74,16 +74,17 @@ UITextFieldDelegate {
     // MARK: Image methods
 
     @IBAction func pickAlbumImage(_ sender: UIBarButtonItem) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+        pickAnImage(from: .photoLibrary)
     }
 
     @IBAction func pickCameraImage(_ sender: UIBarButtonItem) {
+        pickAnImage(from: .camera)
+    }
+
+    func pickAnImage(from source: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = source
         present(imagePicker, animated: true, completion: nil)
     }
 
