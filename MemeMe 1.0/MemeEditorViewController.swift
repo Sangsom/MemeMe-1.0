@@ -38,6 +38,7 @@ UITextFieldDelegate {
         super.viewWillDisappear(animated)
     }
 
+    // MARK: Configuration methods
     func initAppSettings() {
         memeImage.image = nil
         memeImage.contentMode = .scaleAspectFit
@@ -52,33 +53,25 @@ UITextFieldDelegate {
     }
 
     func initTextFields() {
-        topTextField.delegate = self
-        bottomTextField.delegate = self
+        configureTextField(topTextField, with: Constants.TextField.topText)
+        configureTextField(bottomTextField, with: Constants.TextField.bottomText)
+    }
 
-        topTextField.borderStyle = .none
-        bottomTextField.borderStyle = .none
-
-        topTextField.text = Constants.TextField.topText
-        bottomTextField.text = Constants.TextField.bottomText
-
-        topTextField.autocapitalizationType = .allCharacters
-        bottomTextField.autocapitalizationType = .allCharacters
-
-        let textAttributes: [NSAttributedString.Key: Any] = [
+    func configureTextField(_ textField: UITextField, with defaultText: String) {
+        textField.delegate = self
+        textField.text = defaultText
+        textField.borderStyle = .none
+        textField.autocapitalizationType = .allCharacters
+        textField.defaultTextAttributes = [
             .font: UIFont(name: Constants.TextField.font, size: CGFloat(Constants.TextField.size))!,
             .foregroundColor: Constants.TextField.foreGroundColor,
             .strokeColor: Constants.TextField.strokeColor,
             .strokeWidth: Constants.TextField.strokeWidth
         ]
-
-        topTextField.defaultTextAttributes = textAttributes
-        bottomTextField.defaultTextAttributes  = textAttributes
-
-        topTextField.textAlignment = .center
-        bottomTextField.textAlignment = .center
+        textField.textAlignment = .center
     }
 
-    // MARK: Custom methods
+    // MARK: Image methods
 
     @IBAction func pickAlbumImage(_ sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController()
@@ -146,6 +139,8 @@ UITextFieldDelegate {
             self.view.frame.origin.y = 0
         }
     }
+
+    // MARK: Misc methods
 
     @objc func cancelTapped() {
         initAppSettings()
