@@ -169,18 +169,24 @@ UITextFieldDelegate {
     }
 
     func generateImage() -> UIImage {
-        navigationBar.isHidden = true
-        toolbar.isHidden = true
-
+        showNavAndToolbar(false)
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-
-        navigationBar.isHidden = false
-        toolbar.isHidden = false
+        showNavAndToolbar(true)
 
         return memedImage
+    }
+
+    func showNavAndToolbar(_ show: Bool) {
+        if show {
+            navigationBar.isHidden = false
+            toolbar.isHidden = false
+        } else {
+            navigationBar.isHidden = true
+            toolbar.isHidden = true
+        }
     }
 
 }
